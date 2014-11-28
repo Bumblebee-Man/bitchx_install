@@ -1,0 +1,21 @@
+---
+- hosts: irc_client
+  vars:
+    http_port: 80
+    max_clients: 200
+  remote_user: root
+  tasks:
+    - name: update apt repos
+      apt: update_cache=yes
+    - name: install necessary packages
+      apt:  name={{ item }} state=present
+      with_items:
+      - gcc
+      - make
+      - libssl-dev
+      - autoconf
+      - ncurses-dev
+      - git
+    - name: download BitchX repo and place in /tmp
+      git: repo=https://github.com/BitchX/BitchX1.3.git
+         dest=/tmp

@@ -1,0 +1,40 @@
+set LOGFILE .irclog.txt
+set CONNECT_TIMEOUT 60
+set DCC_AUTORESUME ON
+set CLOCK_24HOUR ON
+set AUTO_AWAY OFF
+set FLOOD_KICK OFF
+set FLOOD_PROTECTION OFF
+set DCC_AUTOGET OFF
+set auto_nslookup on
+set auto_whowas on
+set log on
+set mangle_logfiles all_off
+set timestamp on
+set cloak 11
+set beep off
+set kick_ops off
+set auto_unmark_away off
+set client_information .
+set send_away_msg off
+set user_information .
+set verbose_ctcp on
+ 
+/fset format_public [$0] %b<%n$1%b>%n $3-
+/fset public %B[%n$0%B|%n$1%B>%n $3-
+/fset send_public %P[%n$0%P|%n$2%P>%n $3-
+/fset msg %B[%n$0%B|%G$1%B<%n $3-
+/fset send_msg %P[%n$0%P|%n%R$1%P> %n$3-
+/fset public_ar %B[%n$0%B|%Y$1%B>%n $3-
+/fset action %B[%n$0%B|%W$1%n $4-
+/fset action_ar %B[%n$0%B|%W$1%n $4-
+/fset action_channel %B[%n$0%B|%W$1/$3%n $4-
+/fset send_action %B[%n$0%B|%W$1%n $3-
+/fset send_action_other %B[%n$0%B|%W$2%n->%W$1%n $3-
+ 
+/fset channel_signoff %G[%n$0%G|%n$1%n%G|%n%CQUIT%n%G|%n$3%G>%n $4-
+/fset join %G[%n$0%G|%n$1%n%G|%n%CJOIN%n%G|%n$3%G>%n
+/fset leave %G[%n$0%G|%n$1%n%G|%n%CPART%n%G|%n$3%G>%n $4-
+/fset nickname %G[%n$0%G|%n$1%n%G|%n%CNICK%n%G>%n $3
+/fset nickname_other %G[%n$0%G|%n$1%n%G|%n%CNICK%n%G>%n $3
+/fset nickname_user %G[%n$0%G|%n$1%n%G|%n%CNICK%n%G>%n $3
