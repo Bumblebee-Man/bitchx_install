@@ -26,4 +26,4 @@
       shell: ( cd /tmp/BitchX1.3/ ; ./configure --with-ssl --with-plugins --enable-ipv6 ; make ; make install )
 
     - name: place config file
-      copy: src=files/.bitchxrc dest=~/ html mode=0664
+      copy: src=files/.bitchxrc dest=/etc/skel/ html mode=0664
