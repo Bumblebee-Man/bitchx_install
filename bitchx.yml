@@ -7,6 +7,7 @@
   tasks:
     - name: update apt repos
       apt: update_cache=yes
+
     - name: install necessary packages
       apt:  name={{ item }} state=present
       with_items:
@@ -16,8 +17,13 @@
       - autoconf
       - ncurses-dev
       - git
+
     - name: download BitchX repo and place in /tmp
       git: repo=https://github.com/BitchX/BitchX1.3.git
          dest=/tmp/BitchX1.3
+
     - name: compile and install BitchX
       shell: ( cd /tmp/BitchX1.3/ ; ./configure --with-ssl --with-plugins --enable-ipv6 ; make ; make install )
+
+    - name: place config file
+      copy: src=files/.bitchxrc dest=~/ html mode=0664
