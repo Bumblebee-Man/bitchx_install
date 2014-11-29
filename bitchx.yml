@@ -19,5 +19,5 @@
     - name: download BitchX repo and place in /tmp
       git: repo=https://github.com/BitchX/BitchX1.3.git
          dest=/tmp/BitchX1.3
-   - name: compile and install BitchX
-     command: ( cd /tmp/BitchX1.3/ ; ./configure --with-ssl --with-plugins --enable-ipv6 ; make ; make install )
+    - name: compile and install BitchX
+      command: ( cd /tmp/BitchX1.3/ ; ./configure --with-ssl --with-plugins --enable-ipv6 ; make ; make install )
