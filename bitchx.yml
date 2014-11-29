@@ -18,4 +18,4 @@
       - git
     - name: download BitchX repo and place in /tmp
       git: repo=https://github.com/BitchX/BitchX1.3.git
-         dest=/tmp
+         dest=/tmp/BitchX1.3
